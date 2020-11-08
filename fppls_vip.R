@@ -1,3 +1,10 @@
+#' Performs forward projection PLS with 
+#' the cindex of given conditional variable index.
+#' @param x the original data matrices of dimension $n x p$.
+#' @param y the original response variable of dimension $n x 1$.
+#' @param cindex the index of given conditional variable 'cindex'.
+#' @param K the number of forward projection.
+#' @param ratio the number of final selected variables.
 
 fppls_vip <- function(x, y, cindex, K, ratio) {
   library(pls)

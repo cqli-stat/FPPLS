@@ -2,7 +2,7 @@
 #' the cindex of given conditional variable index.
 #' @param x the original data matrices of dimension $n x p$.
 #' @param y the original response variable of dimension $n x 1$.
-#' @param cindex the index of given conditional variable 'cindex'.
+#' @param cindex the index of given conditional variable.
 #' @param K the number of forward projection.
 #' @param ratio the number of final selected variables.
 
@@ -17,7 +17,6 @@ fppls_vip <- function(x, y, cindex, K, ratio) {
   y <- (diag(n) - x[, cindex] %*% solve(t(x[, cindex]) %*% x[, cindex]) %*% t(x[, cindex])) %*% y
 
   A <- c()
-  bic_new <- rep(0, max(ratio))
   rmsecv <- matrix(0, length(ratio), K)
   xrank <- list()
   x1 <- list()
@@ -106,7 +105,6 @@ fppls_vip <- function(x, y, cindex, K, ratio) {
     maxratio <- length(ratio)
   }
   cond_var <- ceiling(which.min(rmsecv) / length(ratio))
-  print(cond_var)
   optimal_ratio <- ratio[maxratio]
   xrank1 <- xrank[[which.min(rmsecv)]]
   optimal_var <- c(xrank1[1:optimal_ratio])

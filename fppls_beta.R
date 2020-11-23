@@ -2,7 +2,7 @@
 #' the cindex of given conditional variable index.
 #' @param x the original data matrices of dimension $n x p$.
 #' @param y the original response variable of dimension $n x 1$.
-#' @param cindex the index of given conditional variable 'cindex'.
+#' @param cindex the index of given conditional variable.
 #' @param K the number of forward projection.
 #' @param ratio the number of final selected variables.
 
